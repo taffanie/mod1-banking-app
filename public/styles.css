@@ -1,0 +1,83 @@
+body {
+    background: #ffffff;
+    margin: auto;
+    margin-top: 10px;
+}
+.home {
+    margin-top: 40px;
+    width: 50%;
+}
+.home .btn {
+    background-color: red;
+    border: none;
+}
+.home h4 {
+    font-size: 19px;
+}
+.friendList {
+    list-style: none;
+    padding-left: 0;
+}
+a {
+    text-decoration: none;
+    color: #ffffff;
+}
+a:hover {
+    color: #ffffff;
+}
+.invite .btn {
+    background-color: red;
+    border: none;
+}
+.transferImg {
+    height: 60%;
+    width: 60%;
+    float: right;
+    margin-top: 100px;
+    border-radius: 4px;
+}
+.friend-created {
+    margin-top: 250px;
+    display: inline-block;
+}
+.friend-created h4 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+.welcome {
+    text-align: center;
+}
+.balance {
+    text-align: center;
+}
+
+/* Krystyna styles */
+#logo {
+    color: #14233c;
+    margin-left: 2rem;
+}
+.navbar {
+    box-shadow: 0 2px 12px 0 rgba(36, 50, 66, 0.075);
+    padding: 1rem 0rem 1rem 0rem;
+}
+.kg-btn {
+    background: #2891cc;
+    margin-right: 2rem;
+}
+.kg-btn:hover {
+    background: #2587bc;
+}
+.kg-btn > a,
+.kg-btn > a:hover {
+    text-decoration: none !important;
+    color: white !important;
+}
+
+.accept-body {
+    margin-top: 4rem;
+}
+
+.kg-img {
+    width: 600px;
+    height: 600px;
+}

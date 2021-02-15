@@ -1,0 +1,60 @@
+<div class="home container">
+    <% if (user) { %>
+        <h4 class="welcome">Welcome <%= user.name %>! </h4>
+        <h4>Profile</h4>
+        <p class="name">
+            Name: <%= user.name%>
+        </p>
+        <p class="name">
+            Email: <%= user.email%>
+        </p>
+        <hr>
+        <p class="balance">
+            Balance: <span class="span">£<%= user.balance %></span>
+        </p>
+        <hr>
+        </p>
+        <h4>Transfer 📤</h4><br>
+        <form name="transfer" action="/transfer" method="post">
+            Choose value: <input name="value" value="0" class="value" type="number" min="1"
+                max="<%= user.balance %>" /><br><br>
+            Choose friend:
+            <select name="friend">
+                <% user.friends.map ( friend=> { %>
+                    <option value="<%= friend %>">
+                        <%= friend %>
+                    </option>
+                    <%})%>
+            </select><br><br>
+            <input type="hidden" name="email" value="<%= user.email%>">
+            <input class="btn btn-primary" type="submit" value="Transfer" /><br><br>
+        </form>
+        <hr>
+        <h4>Add funds 💸</h4>
+        <div class="deposit">
+            <form name="deposit" action="/deposit" method="post">
+                Amount: £ <input name="amount" value="10" class="amount" type="number" /><br><br>
+                <input type="hidden" name="email" value="<%= user.email%>">
+                <button class="btn btn-primary" type="submit" />Deposit</button>
+                <hr>
+            </form>
+        </div>
+
+        <% if (user.friends.length> 0) { %>
+            <h4>Contacts(<%= user.friends.length %>) 📒</h4>
+            <ul class="friendList">
+                <% for(var i=0; i < user.friends.length; i++) { %>
+                    <li>
+                        <%= user.friends[i] %>
+                    </li>
+                    <% } %>
+            </ul>
+            <% } %>
+
+                <form action="/friends/invite" method="POST">
+                    <input type="text" id="to" placeholder="your friend email" name="to">
+                    <button type="submit" class="btn btn-primary">Invite Friend</button>
+                </form>
+
+                <% } %>
+</div>
